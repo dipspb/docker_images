@@ -31,6 +31,7 @@ RUN apt-get update && apt-get install -q -y \
     libqt5gui5 \
     libqt5opengl5 \
     libqt5widgets5 \
+    libopensplice67 \
     libssl-dev \
     libtinyxml-dev \
     libtinyxml2-dev \
