@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for gazebo:gzweb7
 # generated from docker_images/create_gzweb_image.Dockerfile.em
-FROM gazebo:libgazebo7
+FROM dipspb/gazebo:libgazebo790
 
 # install packages
 RUN apt-get update && apt-get install -q -y \
@@ -22,7 +22,7 @@ RUN apt-get update && apt-get install -q -y \
 
 # install gazebo packages
 RUN apt-get update && apt-get install -q -y \
-    libgazebo7-dev=7.8.1-1* \
+    libgazebo7-dev=7.9.0-1* \
     && rm -rf /var/lib/apt/lists/*
 
 # clone gzweb
