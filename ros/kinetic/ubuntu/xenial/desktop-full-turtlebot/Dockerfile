@@ -17,10 +17,14 @@ RUN apt-get update && \
     && \
     rm -rf /var/lib/apt/lists/*
 
-COPY tmux.conf /root/.tmux.conf
+COPY config/tmux.conf /root/.tmux.conf
 
-COPY tmux-banner.txt /
+COPY config/tmux-banner.txt /
 RUN echo "cat <<_EOD" >> /root/.bashrc ; \
     cat tmux-banner.txt >> /root/.bashrc ; \
     echo "_EOD" >> /root/.bashrc ; \
     rm /tmux-banner.txt
+
+COPY config/env.txt /
+RUN cat env.txt >> /root/.bashrc ; \
+    rm /env.txt
