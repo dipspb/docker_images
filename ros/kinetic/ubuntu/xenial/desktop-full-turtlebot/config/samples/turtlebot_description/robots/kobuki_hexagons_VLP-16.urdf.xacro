@@ -13,9 +13,5 @@
 
   <kobuki/>
   <stack_hexagons parent="base_link"/>
-  <!--<VLP-16 parent="base_link" name="velodyne" topic="/velodyne_points" hz="10" samples="440">-->
-  <VLP-16 parent="base_link" name="velodyne" topic="/velodyne_points" hz="10" samples="1875">
-    <origin xyz="0 0 0.4" rpy="0 0 0" />
-  </VLP-16>
-
+  <VLP-16 parent="VLP=16_base_link"/>
 </robot>

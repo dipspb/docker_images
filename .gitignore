@@ -97,3 +97,6 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# OSX utility folders
+.DS_Store
