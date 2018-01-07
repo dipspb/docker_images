@@ -17,14 +17,16 @@ RUN apt-get update && \
     && \
     rm -rf /var/lib/apt/lists/*
 
-COPY config/tmux.conf /root/.tmux.conf
+# Turtlebot + VLP-16
+COPY config/kobuki_hexagons_VLP-16.urdf.xacro /opt/ros/kinetic/share/turtlebot_description/robots/
 
+COPY config/env.txt /
+RUN cat env.txt >> /root/.bashrc ; \
+    rm /env.txt
+
+COPY config/tmux.conf /root/.tmux.conf
 COPY config/tmux-banner.txt /
 RUN echo "cat <<_EOD" >> /root/.bashrc ; \
     cat tmux-banner.txt >> /root/.bashrc ; \
     echo "_EOD" >> /root/.bashrc ; \
     rm /tmux-banner.txt
-
-COPY config/env.txt /
-RUN cat env.txt >> /root/.bashrc ; \
-    rm /env.txt
