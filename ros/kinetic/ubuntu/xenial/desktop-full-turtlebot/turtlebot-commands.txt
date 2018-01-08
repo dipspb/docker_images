@@ -1,0 +1,26 @@
+roslaunch turtlebot_gazebo turtlebot_world.launch
+
+roslaunch turtlebot_rviz_launchers view_navigation.launch
+roslaunch turtlebot_rviz_launchers view_robot.launch
+
+roslaunch turtlebot_gazebo gmapping_demo.launch
+
+roslaunch octomap_server octomap_mapping.launch
+roslaunch velodyne_pointcloud VLP16_points.launch
+
+roslaunch kobuki_keyop keyop.launch
+
+======================
+rosrun xacro xacro /path/to/faile.xacro
+
+======================
+Sometime it shows error:
+the rosdep view is empty: call 'sudo rosdep init' and 'rosdep update'
+
+https://answers.ros.org/question/194963/the-rosdep-view-is-empty-call-sudo-rosdep-init-and-rosdep-update/
+
+sudo rosdep init       # not needed, because already present
+rosdep update          # will warn about root EUID
+rosdep fix-permissions # try to fix after root
+
+
