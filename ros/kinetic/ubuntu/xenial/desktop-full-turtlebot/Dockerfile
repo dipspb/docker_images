@@ -12,6 +12,7 @@ RUN apt-get update && \
         ros-kinetic-velodyne-simulator \
         ros-kinetic-octomap \
         ros-kinetic-octomap-mapping \
+        ros-kinetic-octomap-rviz-plugins \
         tmux \
         vim-nox \
     && \
@@ -45,7 +46,7 @@ RUN head -n -1 /ros_entrypoint.sh > /ros_entrypoint_new.sh && \
 COPY config/kobuki_hexagons_VLP-16.urdf.xacro \
      /opt/ros/kinetic/share/turtlebot_description/robots/
 
-# TMux config
+# TMux config from https://gist.github.com/spicycode/1229612
 COPY config/tmux.conf /root/.tmux.conf
 COPY config/tmux-banner.txt /
 RUN echo "cat <<_EOD" >> /root/.bashrc ; \
