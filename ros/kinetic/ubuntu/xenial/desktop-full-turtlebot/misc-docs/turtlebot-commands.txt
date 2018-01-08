@@ -22,5 +22,3 @@ https://answers.ros.org/question/194963/the-rosdep-view-is-empty-call-sudo-rosde
 sudo rosdep init       # not needed, because already present
 rosdep update          # will warn about root EUID
 rosdep fix-permissions # try to fix after root
-
-
