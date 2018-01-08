@@ -26,5 +26,5 @@ docker run --rm -ti \
 	-e ROS_MASTER_URI \
 	-e GAZEBO_IP=$MASTER_IP \
 	-e GAZEBO_MASTER_URI \
+	-e TURTLEBOT_3D_SENSOR="VLP-16" \
 	dipspb/ros:kinetic-turtlebot $@
-
